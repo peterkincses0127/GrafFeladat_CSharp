@@ -12,14 +12,14 @@ namespace GrafFeladat_CSharp
         {
             var graf = new Graf(6);
 
-            graf.Hozzaad(0, 1);
-            graf.Hozzaad(1, 2);
-            graf.Hozzaad(0, 2);
-            graf.Hozzaad(2, 3);
-            graf.Hozzaad(3, 4);
-            graf.Hozzaad(4, 5);
+            //graf.Hozzaad(0, 1);
+            //graf.Hozzaad(1, 2);
+            //graf.Hozzaad(0, 2);
+            //graf.Hozzaad(2, 3);
+            //graf.Hozzaad(3, 4);
+            //graf.Hozzaad(4, 5);
             graf.Hozzaad(2, 4);
-
+            
             Console.WriteLine(graf);
             Console.ReadLine();
         }

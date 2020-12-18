@@ -63,6 +63,57 @@ namespace GrafFeladat_CSharp
             elek.Add(new El(cs1, cs2));
             elek.Add(new El(cs2, cs1));
         }
+        //public void Torles(int cs1, int cs2)
+        //{
+        //    if (cs1 < 0 || cs1 >= csucsokSzama ||
+        //       cs2 < 0 || cs2 >= csucsokSzama)
+        //    {
+        //        throw new ArgumentOutOfRangeException("Hibas csucs index");
+        //    }
+        //    int n = 0;
+        //    int m = 0;
+
+        //    for (int i = 0; i < elek.Count; i++)
+        //    {
+
+        //            Console.WriteLine(elek[i]);
+
+        //    }
+
+
+
+
+        //}
+        private void szelessegBejar(int kezdoPont) {
+            List<Graf> graf = new List<Graf>();
+            Queue<Csucs> kovetkezo = new Queue<Csucs>();
+            kovetkezo.Enqueue(new Csucs(kezdoPont));
+            graf.Add(new Graf(kezdoPont));
+            while (kovetkezo.Count > 0) {
+                
+                Csucs k = kovetkezo.Dequeue();
+                Console.WriteLine(k);
+                foreach (El item in elek)
+                {
+                    if (item.Csucs1.Equals(k) && !item.Csucs2.Equals(k))
+                    {
+                       
+                        kovetkezo.Enqueue(new Csucs(item.Csucs2));
+                        graf.Add(new Graf(item.Csucs2));
+                    }
+                }
+            }
+        }
+        private void melysegiBejar(int kezdopont) {
+            List<Graf> bejart = new List<Graf>();
+            Stack<Csucs> kovetkezok = new Stack<Csucs>();
+            kovetkezok.Pop();
+            Console.WriteLine(kovetkezok.Peek());
+
+
+        }
+
+
 
         public override string ToString()
         {
